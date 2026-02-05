@@ -37,12 +37,14 @@ function App() {
   */
   const handleReload = () => {
     const { data, loading, error } = useApi(
-      "https://jsonplaceholder.typicode.com/posts"
+      "https://jsonplaceholder.typicode.com/posts",
     );
   };
-
+  const apiURL = import.meta.env.VITE_API_URL;
   const { data, loading, error } = useApi(
-    "https://jsonplaceholder.typicode.com/posts"
+    //"https://jsonplaceholder.typicode.com/posts"
+    //"http://localhost:5051/reportes/prueba"
+    apiURL,
   );
 
   if (loading) {
@@ -67,9 +69,9 @@ function App() {
   return (
     <div>
       <h1> Mi App con API jsonplaceholder</h1>
-      <button onClick={handleReload}>Recargar Datos</button>
+      {/*<button onClick={handleReload}>Recargar Datos</button>*/}
 
-      <div className="table-cointainer">
+      <div className="table-container">
         <h2>Posts de la API:</h2>
 
         {data && data.length > 0 ? (
