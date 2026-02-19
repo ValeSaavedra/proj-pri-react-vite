@@ -85,7 +85,8 @@ function App() {
               </tr>
             </thead>
             <tbody>
-              {data.slice(0, 10).map((item) => (
+              {/*{data.slice(0, 10).map((item) => (*/}
+              {data.map((item) => (
                 <tr key={item.id}>
                   <td>{item.id}</td>
                   <td>{item.title}</td>
